@@ -1,0 +1,12 @@
+/Users/moritzterink/Desktop/FH/Semester 5/Semesterarbeit/NextStop/NextStop.Infrastructure/bin/Debug/net8.0/NextStop.Infrastructure.deps.json
+/Users/moritzterink/Desktop/FH/Semester 5/Semesterarbeit/NextStop/NextStop.Infrastructure/bin/Debug/net8.0/NextStop.Infrastructure.dll
+/Users/moritzterink/Desktop/FH/Semester 5/Semesterarbeit/NextStop/NextStop.Infrastructure/bin/Debug/net8.0/NextStop.Infrastructure.pdb
+/Users/moritzterink/Desktop/FH/Semester 5/Semesterarbeit/NextStop/NextStop.Infrastructure/obj/Debug/net8.0/NextStop.Infrastructure.csproj.AssemblyReference.cache
+/Users/moritzterink/Desktop/FH/Semester 5/Semesterarbeit/NextStop/NextStop.Infrastructure/obj/Debug/net8.0/NextStop.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+/Users/moritzterink/Desktop/FH/Semester 5/Semesterarbeit/NextStop/NextStop.Infrastructure/obj/Debug/net8.0/NextStop.Infrastructure.AssemblyInfoInputs.cache
+/Users/moritzterink/Desktop/FH/Semester 5/Semesterarbeit/NextStop/NextStop.Infrastructure/obj/Debug/net8.0/NextStop.Infrastructure.AssemblyInfo.cs
+/Users/moritzterink/Desktop/FH/Semester 5/Semesterarbeit/NextStop/NextStop.Infrastructure/obj/Debug/net8.0/NextStop.Infrastructure.csproj.CoreCompileInputs.cache
+/Users/moritzterink/Desktop/FH/Semester 5/Semesterarbeit/NextStop/NextStop.Infrastructure/obj/Debug/net8.0/NextStop.Infrastructure.dll
+/Users/moritzterink/Desktop/FH/Semester 5/Semesterarbeit/NextStop/NextStop.Infrastructure/obj/Debug/net8.0/refint/NextStop.Infrastructure.dll
+/Users/moritzterink/Desktop/FH/Semester 5/Semesterarbeit/NextStop/NextStop.Infrastructure/obj/Debug/net8.0/NextStop.Infrastructure.pdb
+/Users/moritzterink/Desktop/FH/Semester 5/Semesterarbeit/NextStop/NextStop.Infrastructure/obj/Debug/net8.0/ref/NextStop.Infrastructure.dll

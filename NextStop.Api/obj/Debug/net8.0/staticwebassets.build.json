@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "EPV9mII683GsJZwork0XRJBr7tui97XrpA9p9mv8dF8=",
+  "Source": "NextStop.Api",
+  "BasePath": "_content/NextStop.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
