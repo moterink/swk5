@@ -8,6 +8,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NextStop.Infrastructure", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NextStop.Infrastructure.Tests", "NextStop.Infrastructure.Tests\NextStop.Infrastructure.Tests.csproj", "{2A6AACFF-88DD-4E7E-920A-C31F29F3A7DA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NextStop.Api.Tests", "NextStop.Api.Tests\NextStop.Api.Tests.csproj", "{56205DAA-0CE1-4221-842F-0871EABD7903}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{2A6AACFF-88DD-4E7E-920A-C31F29F3A7DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2A6AACFF-88DD-4E7E-920A-C31F29F3A7DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2A6AACFF-88DD-4E7E-920A-C31F29F3A7DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56205DAA-0CE1-4221-842F-0871EABD7903}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56205DAA-0CE1-4221-842F-0871EABD7903}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56205DAA-0CE1-4221-842F-0871EABD7903}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56205DAA-0CE1-4221-842F-0871EABD7903}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

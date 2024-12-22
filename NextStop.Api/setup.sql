@@ -1,6 +1,7 @@
 CREATE TABLE holidays (
     id SERIAL PRIMARY KEY,
-    date DATE NOT NULL,
+    start_date DATE NOT NULL,
+    end_date DATE NOT NULL,
     name TEXT NOT NULL,
     is_school_holiday BOOLEAN NOT NULL
 );
@@ -28,4 +29,12 @@ CREATE TABLE route_stops (
     scheduled_departure_time TIME NOT NULL,
     PRIMARY KEY (route_id, stop_id),
     UNIQUE (route_id, sequence_number)
-)
+);
+
+CREATE TABLE checkins (
+    id SERIAL PRIMARY KEY,
+    route_id INTEGER NOT NULL REFERENCES routes(id),
+    stop_id INTEGER NOT NULL REFERENCES stops(id),
+    timestamp TIMESTAMP NOT NULL
+);
+

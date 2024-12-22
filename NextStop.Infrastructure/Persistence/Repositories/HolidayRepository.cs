@@ -17,7 +17,7 @@ namespace NextStop.Infrastructure.Persistence.Repositories
         public async Task<IEnumerable<Holiday>> GetAllAsync()
         {
             var holidays = new List<Holiday>();
-            var query = "SELECT id, date, name, is_school_holiday FROM holidays";
+            var query = "SELECT id, start_date, end_date, name, is_school_holiday FROM holidays";
 
             await using var conn = await _dataSource.OpenConnectionAsync();
             await using var cmd = new NpgsqlCommand(query, conn);
@@ -28,9 +28,10 @@ namespace NextStop.Infrastructure.Persistence.Repositories
                 holidays.Add(new Holiday
                 {
                     Id = reader.GetInt32(0),
-                    Date = reader.GetDateTime(1),
-                    Name = reader.GetString(2),
-                    IsSchoolHoliday = reader.GetBoolean(3)
+                    StartDate = reader.GetDateTime(1),
+                    EndDate = reader.GetDateTime(2),
+                    Name = reader.GetString(3),
+                    IsSchoolHoliday = reader.GetBoolean(4)
                 });
             }
 
@@ -39,7 +40,7 @@ namespace NextStop.Infrastructure.Persistence.Repositories
 
         public async Task<Holiday?> GetByIdAsync(int id)
         {
-            var query = "SELECT id, date, name, is_school_holiday FROM holidays WHERE id = @id";
+            var query = "SELECT id, start_date, end_date, name, is_school_holiday FROM holidays WHERE id = @id";
 
             await using var conn = await _dataSource.OpenConnectionAsync();
             await using var cmd = new NpgsqlCommand(query, conn);
@@ -51,9 +52,10 @@ namespace NextStop.Infrastructure.Persistence.Repositories
                 return new Holiday
                 {
                     Id = reader.GetInt32(0),
-                    Date = reader.GetDateTime(1),
-                    Name = reader.GetString(2),
-                    IsSchoolHoliday = reader.GetBoolean(3)
+                    StartDate = reader.GetDateTime(1),
+                    EndDate = reader.GetDateTime(2),
+                    Name = reader.GetString(3),
+                    IsSchoolHoliday = reader.GetBoolean(4)
                 };
             }
 
@@ -62,11 +64,13 @@ namespace NextStop.Infrastructure.Persistence.Repositories
 
         public async Task<int> AddAsync(Holiday holiday)
         {
-            var query = "INSERT INTO holidays (date, name, is_school_holiday) VALUES (@date, @name, @isSchoolHoliday) RETURNING id";
+            var query = @"INSERT INTO holidays (start_date, end_date, name, is_school_holiday) 
+                          VALUES (@startDate, @endDate, @name, @isSchoolHoliday) RETURNING id";
 
             await using var conn = await _dataSource.OpenConnectionAsync();
             await using var cmd = new NpgsqlCommand(query, conn);
-            cmd.Parameters.AddWithValue("@date", holiday.Date);
+            cmd.Parameters.AddWithValue("@startDate", holiday.StartDate);
+            cmd.Parameters.AddWithValue("@endDate", holiday.EndDate);
             cmd.Parameters.AddWithValue("@name", holiday.Name);
             cmd.Parameters.AddWithValue("@isSchoolHoliday", holiday.IsSchoolHoliday);
 
@@ -76,12 +80,15 @@ namespace NextStop.Infrastructure.Persistence.Repositories
 
         public async Task<int> UpdateAsync(Holiday holiday)
         {
-            var query = "UPDATE holidays SET date = @date, name = @name, is_school_holiday = @isSchoolHoliday WHERE id = @id";
+            var query = @"UPDATE holidays 
+                          SET start_date = @startDate, end_date = @endDate, name = @name, is_school_holiday = @isSchoolHoliday 
+                          WHERE id = @id";
 
             await using var conn = await _dataSource.OpenConnectionAsync();
             await using var cmd = new NpgsqlCommand(query, conn);
             cmd.Parameters.AddWithValue("@id", holiday.Id);
-            cmd.Parameters.AddWithValue("@date", holiday.Date);
+            cmd.Parameters.AddWithValue("@startDate", holiday.StartDate);
+            cmd.Parameters.AddWithValue("@endDate", holiday.EndDate);
             cmd.Parameters.AddWithValue("@name", holiday.Name);
             cmd.Parameters.AddWithValue("@isSchoolHoliday", holiday.IsSchoolHoliday);
 

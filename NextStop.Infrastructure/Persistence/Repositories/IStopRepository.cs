@@ -11,5 +11,8 @@ namespace NextStop.Infrastructure.Persistence.Repositories
         Task<int> AddAsync(Stop stop);
         Task<int> UpdateAsync(Stop stop);
         Task<int> DeleteAsync(int id);
+        Task<bool> ExistsByShortNameAsync(string shortName, int excludeId);
+        Task<IEnumerable<Stop>> SearchAsync(string query);
+        Task<IEnumerable<Departure>> GetNextDeparturesAsync(int stopId, DateTime dateTime, int limit);
     }
 }

@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:latest
+    container_name: nextstop-db
+    environment:
+      POSTGRES_USER: nextstop-admin
+      POSTGRES_PASSWORD: nextstoppw
+      POSTGRES_DB: nextstop
+    ports:
+      - "5455:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  keycloak:
+    image: quay.io/keycloak/keycloak:latest
+    container_name: keycloak
+    environment:
+      # Keycloak admin credentials
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin
+
+      # Database configuration for Keycloak
+      KC_DB: postgres
+      KC_DB_URL: jdbc:postgresql://postgres:5432/nextstop
+      KC_DB_USERNAME: nextstop-admin
+      KC_DB_PASSWORD: nextstoppw
+
+    ports:
+      - "8080:8080" # Keycloak exposed on localhost:8080
+    depends_on:
+      - postgres
+    command: start-dev
+    volumes:
+      - keycloak_data:/opt/keycloak/data
+
+volumes:
+  postgres_data:
+  keycloak_data:

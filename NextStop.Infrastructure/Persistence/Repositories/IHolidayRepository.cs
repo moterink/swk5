@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-using System.Threading.Tasks;
 using NextStop.Infrastructure.Persistence.Entities;
 
 namespace NextStop.Infrastructure.Persistence.Repositories
